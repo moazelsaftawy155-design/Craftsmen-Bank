@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Loading</title>
+
+<style>
+body{
+    background-image: url('WhatsApp Image 2026-03-11 at 10.59.49 PM.jpeg');
+        background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    font-family:Arial;
+    margin:0;
+    text-align:center;
+
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial;
+}
+
+/* اللوجو */
+.logo{
+    font-size:40px;
+    color:white;
+    font-weight:bold;
+}
+
+/* شريط التحميل */
+.loading-container{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:9px;
+    background:#969595;
+}
+
+.loading-bar{
+    height:100%;
+    width:0%;
+    background:#00ff99;
+}
+</style>
+
+</head>
+<body>
+
+<div class="logo">
+
+</div>
+
+<div class="loading-container">
+    <div class="loading-bar" id="bar"></div>
+</div>
+
+<script>
+
+let bar = document.getElementById("bar");
+let width = 0;
+
+let loading = setInterval(function(){
+
+    if(width >= 100){
+        clearInterval(loading);
+
+        // فتح صفحة جديدة بعد التحميل
+        window.location.href = "home.html";
+
+    }else{
+        width++;
+        bar.style.width = width + "%";
+    }
+
+},50); // 10 ثواني
+
+</script>
+
+</body>
+</html>
